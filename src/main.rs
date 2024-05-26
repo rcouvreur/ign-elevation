@@ -160,7 +160,10 @@ fn main() -> Result<()> {
             .map(|h| (f64::powf(2., 8.) * (h - min) / (max - min)) as u8)
             .collect();
         let image = GrayImage::from_vec(map_size as u32, map_size as u32, norm_heights).unwrap();
-        let _ = image.save(path_image).context("Failed to save the image")?;
+        let rotated_image = image::imageops::rotate270(&image);
+        let _ = rotated_image
+            .save(path_image)
+            .context("Failed to save the image")?;
     }
 
     Ok(())
