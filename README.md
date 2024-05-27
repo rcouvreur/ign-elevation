@@ -1,4 +1,4 @@
-Small project to fetch elevation data from the IGN API.
+Small project to fetch elevation data from the IGN API. **IGN data is limited to France.**
 
 Given a GPS coordinate (latitude and longitude), the program will fetch the elevation at all the points in a 2d grid around the point.
 
